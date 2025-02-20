@@ -7,7 +7,7 @@ const app = express();
 const PORT = process.env.PORT || 3000;
 
 // Enable CORS for frontend access
-app.use(cors());
+app.use(cors({origin: "https://jadedsieger.github.io"}));
 app.use(express.json());
 
 // Start Bot
