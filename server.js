@@ -2,7 +2,7 @@ require('dotenv').config();
 const express = require('express');
 const cors = require('cors');
 const client = require("./lieserl-stable");
-
+const { config } = require('dotenv');
 
 const app = express();
 const PORT = process.env.PORT || 3000;
@@ -15,7 +15,7 @@ app.use(express.json());
 app.post('/bot/start', async (req, res) => {
     if (!client.isReady()) {
         try {
-            await client.login(process.env.BOT_TOKEN);
+            await client.login(config.token);
             res.json({ message: "Bot started successfully!" });
         } catch (error) {
             res.status(500).json({ message: "Error starting bot", error });
