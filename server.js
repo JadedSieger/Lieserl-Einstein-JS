@@ -42,6 +42,10 @@ app.post('/bot/stop', async (req, res) => {
     if (client.isReady()) {
         await client.destroy();
         res.json({ message: "Bot stopped successfully!" });
+
+        setTimeout(() => {
+            console.log("Bot is now stopped.");
+        }, 2000);
     } else {
         res.json({ message: "Bot is not running!" });
     }
