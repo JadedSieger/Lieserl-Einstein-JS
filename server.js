@@ -2,7 +2,6 @@ require('dotenv').config();
 const express = require('express');
 const cors = require('cors');
 const client = require("./lieserl-stable");
-const { config } = require('dotenv');
 
 const app = express();
 const PORT = process.env.PORT || 3000;
