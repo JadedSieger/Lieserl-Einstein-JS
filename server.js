@@ -1,7 +1,7 @@
 require('dotenv').config();
 const express = require('express');
 const cors = require('cors');
-const client = require("./lieserl-stable"); // Import the bot instance
+const client = require("./lieserl-stable"); // Import bot instance
 
 const app = express();
 const PORT = process.env.PORT || 3000;
@@ -9,17 +9,14 @@ const PORT = process.env.PORT || 3000;
 app.use(cors({ origin: "https://jadedsieger.github.io" }));
 app.use(express.json());
 
-let botRunning = false; // Track bot status
-
 // Start Bot
 app.post('/bot/start', async (req, res) => {
-    if (botRunning || client.isReady()) {
+    if (client.isReady()) {
         return res.json({ message: "Bot is already running!" });
     }
 
     try {
         await client.login(process.env.token);
-        botRunning = true;
         res.json({ message: "Bot started successfully!" });
     } catch (error) {
         console.error("Error starting bot:", error);
@@ -29,17 +26,17 @@ app.post('/bot/start', async (req, res) => {
 
 // Stop Bot
 app.post('/bot/stop', async (req, res) => {
-    if (!botRunning || !client.isReady()) {
+    if (!client.isReady()) {
         return res.json({ message: "Bot is not running!" });
     }
 
     await client.destroy();
-    botRunning = false;
     res.json({ message: "Bot stopped successfully!" });
 });
 
 // Get Bot Status
 app.get('/bot/status', (req, res) => {
+    console.log("isReady():", client.isReady());
     res.json({ status: client.isReady() ? "Online" : "Offline" });
 });
 
