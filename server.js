@@ -17,7 +17,11 @@ app.post('/bot/start', async (req, res) => {
 
     try {
         await client.login(process.env.token);
-        res.json({ message: "Bot started successfully!" });
+
+        // Wait for the bot to fully start before sending response
+        client.once("ready", () => {
+            res.json({ message: "Bot started successfully!" });
+        });
     } catch (error) {
         console.error("Error starting bot:", error);
         res.status(500).json({ message: "Error starting bot", error });

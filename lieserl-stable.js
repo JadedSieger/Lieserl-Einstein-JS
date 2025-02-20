@@ -6,7 +6,7 @@ const { Client, GatewayIntentBits } = require("discord.js");
 const express = require("express");
 const app = express();
 const PORT = process.env.PORT || 3000;
-let server;
+
 
 const token = process.env.token;
 const apiKey = process.env.apiKey;
@@ -25,6 +25,7 @@ client.on("ready", () => {
   console.log("Lieserl is Ready");
   
 });
+
 let conversation = [];
 
 client.on("messageCreate", async (message) => {
