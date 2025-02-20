@@ -22,7 +22,7 @@ const characterName = "Lieserl Albert Einstein";
 
 client.on("ready", () => {
   console.log("Lieserl is Ready");
-  client.user.setActivity('Anti-Entropy Archives', {type: ActivityType.Streaming})
+  client.user.setActivity('Anti-Entropy Archives', {type: ActivityType.Streaming});
 });
 
 
