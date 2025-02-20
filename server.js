@@ -34,6 +34,9 @@ app.post('/bot/stop', async (req, res) => {
     }
 });
 
+app.get("/", (req, res) => {
+    res.json({ message: "Lieserl Bot API is running!" });
+});
 // Get Bot Status
 app.get('/bot/status', (req, res) => {
     res.json({ status: client.isReady() ? "Online" : "Offline" });
