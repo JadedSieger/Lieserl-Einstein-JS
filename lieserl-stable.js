@@ -2,7 +2,7 @@ require("dotenv").config();
 const axios = require("axios");
 const cleverbot = require("cleverbot-free");
 const cheerio = require("cheerio");
-const { Client, GatewayIntentBits } = require("discord.js");
+const { Client, GatewayIntentBits, ActivityType } = require("discord.js");
 const express = require("express");
 
 
@@ -22,8 +22,9 @@ const characterName = "Lieserl Albert Einstein";
 
 client.on("ready", () => {
   console.log("Lieserl is Ready");
-  
+  client.user.setActivity('Anti-Entropy Archives', {type: ActivityType.Streaming})
 });
+
 
 let conversation = [];
 
