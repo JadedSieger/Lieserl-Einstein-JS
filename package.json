@@ -1,11 +1,16 @@
 {
-  "dependencies": {
-    "axios": "^1.6.3",
-    "cheerio": "^1.0.0-rc.12",
-    "cleverbot-free": "^2.0.1",
-    "discord.js": "^14.14.1",
-    "dotenv": "^16.3.1",
-    "html-to-text": "^9.0.5",
-    "jsdom": "^23.0.1"
-  }
+    "dependencies": {
+        "@discordjs/voice": "^0.18.0",
+        "axios": "^1.6.3",
+        "cheerio": "^1.0.0-rc.12",
+        "cleverbot-free": "^2.0.1",
+        "discord.js": "^14.14.1",
+        "dotenv": "^16.3.1",
+        "fs": "^0.0.1-security",
+        "gtts": "^0.2.1",
+        "html-to-text": "^9.0.5",
+        "jsdom": "^23.0.1",
+        "llama-node": "^0.1.6",
+        "llamaai": "^1.0.4"
+    }
 }
