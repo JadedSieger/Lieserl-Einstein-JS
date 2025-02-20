@@ -12,5 +12,8 @@
         "jsdom": "^23.0.1",
         "llama-node": "^0.1.6",
         "llamaai": "^1.0.4"
+    },
+    "scripts": {
+  "start": "node server.js"
     }
 }
