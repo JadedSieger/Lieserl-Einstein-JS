@@ -39,6 +39,7 @@ app.get("/", (req, res) => {
 });
 // Get Bot Status
 app.get('/bot/status', (req, res) => {
+    console.log("isReady():", client.isReady());
     res.json({ status: client.isReady() ? "Online" : "Offline" });
 });
 app.get('/bot/name', (req, res) => {
