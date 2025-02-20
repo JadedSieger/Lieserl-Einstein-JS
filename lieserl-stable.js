@@ -3,6 +3,7 @@ const axios = require("axios");
 const cleverbot = require("cleverbot-free");
 const cheerio = require("cheerio");
 const { Client, GatewayIntentBits } = require("discord.js");
+
 const token = process.env.token;
 const apiKey = process.env.apiKey;
 
@@ -17,7 +18,7 @@ const client = new Client({
 const characterName = "Lieserl Albert Einstein";
 
 client.on("ready", () => {
-  console.log("Ready");
+  console.log("Lieserl is Ready");
 });
 
 let conversation = [];
