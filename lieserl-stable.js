@@ -3,7 +3,9 @@ const axios = require("axios");
 const cleverbot = require("cleverbot-free");
 const cheerio = require("cheerio");
 const { Client, GatewayIntentBits } = require("discord.js");
-const config = require("./config.json");
+
+const token = process.env.token;
+const apiKey = process.env.apiKey;
 
 const client = new Client({
   intents: [
