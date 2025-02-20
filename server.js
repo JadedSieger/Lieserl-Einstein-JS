@@ -15,7 +15,7 @@ app.use(express.json());
 app.post('/bot/start', async (req, res) => {
     if (!client.isReady()) {
         try {
-            await client.login(config.token);
+            await client.login(process.env.token);
             res.json({ message: "Bot started successfully!" });
         } catch (error) {
             res.status(500).json({ message: "Error starting bot", error });
