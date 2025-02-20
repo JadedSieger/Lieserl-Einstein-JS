@@ -24,23 +24,7 @@ const characterName = "Lieserl Albert Einstein";
 client.on("ready", () => {
   console.log("Lieserl is Ready");
   
-  if(server){
-    server.close(() =>{
-      console.log("Restarting API Server.");
-      startServer();
-    });
-  } else{
-    startServer();
-  }
-
 });
-
-function startServer(){
-  server = app.listen(PORT, () =>{
-    console.log(`API is running on ${PORT}`);
-  });
-}
-client.once("ready", startServer);
 let conversation = [];
 
 client.on("messageCreate", async (message) => {
