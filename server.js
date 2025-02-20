@@ -1,7 +1,8 @@
 require('dotenv').config();
 const express = require('express');
 const cors = require('cors');
-const { Client, GatewayIntentBits } = require('discord.js');
+const client = require("./lieserl-stable");
+
 
 const app = express();
 const PORT = process.env.PORT || 3000;
@@ -9,11 +10,6 @@ const PORT = process.env.PORT || 3000;
 // Enable CORS for frontend access
 app.use(cors());
 app.use(express.json());
-
-// Discord Bot Setup
-const client = new Client({
-    intents: [GatewayIntentBits.Guilds, GatewayIntentBits.GuildMessages]
-});
 
 // Start Bot
 app.post('/bot/start', async (req, res) => {

@@ -138,5 +138,5 @@ function customizeResponse(response, characterName) {
 
   return response;
 }
-
+module.exports = client;
 client.login(config.token);
