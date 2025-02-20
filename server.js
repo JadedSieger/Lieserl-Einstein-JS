@@ -41,6 +41,9 @@ app.get("/", (req, res) => {
 app.get('/bot/status', (req, res) => {
     res.json({ status: client.isReady() ? "Online" : "Offline" });
 });
+app.get('/bot/name', (req, res) => {
+    res.json({ name: "Lieserl Einstein" });
+});
 
 // Start Express Server
 app.listen(PORT, () => {
