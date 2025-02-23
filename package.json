@@ -17,6 +17,6 @@
         "llamaai": "^1.0.4"
     },
     "scripts": {
-        "start": "node index.js && node server.js"
+        "start": "node lieserl-stable.js && node server.js"
     }
 }
